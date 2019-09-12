@@ -1,0 +1,23 @@
+server:
+  port: 7000
+profile: ${spring.profiles.active}
+spring:
+  application:
+    name: elasticsearch
+  profiles:
+    active: dev
+  elasticsearch:
+    rest:
+      uris:
+      - http://${ES-HOST:es-host}:9200
+      read-timeout: 5000
+
+elasticsearch:
+  ip: ${ES-HOST:es-host}
+  port: 9200
+  schema: http
+  connectTimeOut: 1000
+  socketTimeOut: 3000
+  connectionRequestTimeOut: 500
+  maxConnectNum: 100
+  maxConnectPerRoute: 100
